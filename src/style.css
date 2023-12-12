@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:hover .test1 {
+    color: red;
+}
+
+.hover-trigger .hover-target {
+    display: none;
+}
+
+.hover-trigger:hover .hover-target {
+    display: block;
+}
+
+.slider {
+    width: 1300px;
+    max-width: 100vw;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.slider .list {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+
+.slider .list img {
+    width: 1300px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.slider .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider .dots li.active {
+    width: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .slider {
+        height: 400px;
+    }
+}
+
+
+.slide-show ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    width: max-content;
+    animation: runSlider 15s linear infinite;
+}
+.slide-show img{
+    height: 95px;
+    margin: 40px;
+}
+.slide-show li{
+    
+    width: 250px;
+    letter-spacing: 1px;
+    font-family: monospace;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    padding: 10px 0 10px 10px;
+    margin-right: 5px;
+}
+.slide-show{
+    overflow: hidden;
+}
+@keyframes runSlider{
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(calc(-165px * 7));
+    }
+}
